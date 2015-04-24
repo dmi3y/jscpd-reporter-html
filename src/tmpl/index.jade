@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+    head
+        title jscpd report
+        link(rel="stylesheet", href="https://highlightjs.org/static/styles/default.css")
+        style= style
+    body
+        .wrapper
+            .stat
+                div
+                    | Found <span>#{statistics.clones}</span> clone(s),
+                    | with total duplication counts <span>#{statistics.clones}</span>, in <span>#{statistics.clones}</span> file(s).
+                div
+                    | This is <span>#{statistics.lines}</span> lines alltogether,
+                    | which is about <span>#{statistics.percentage}</span>% from what has been scanned.
+
+            each dup in duplicates
+                .dups
+                    ul.dupFiles
+                        li #{dup.firstFile.name}&nbsp;
+                            span #{dup.firstFile.start}:#{dup.firstFile.end}
+                        li #{dup.secondFile.name}&nbsp;
+                            span #{dup.secondFile.start}:#{dup.secondFile.end}
+                    pre
+                        code= dup.fragment
+            else
+                div Congrats!
+
+        script(src="https://highlightjs.org/static/highlight.pack.js")
+        script hljs.initHighlightingOnLoad();

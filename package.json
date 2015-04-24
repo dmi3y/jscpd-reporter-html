@@ -1,0 +1,17 @@
+{
+  "name": "jscpd-reporter-html",
+  "version": "1.0.0",
+  "description": "HTML reports for JavaScript Copy Paste Detector (jscpd)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dmi3y",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.9.2",
+    "jade": "^1.9.2",
+    "lodash": "^3.7.0",
+    "stylus": "^0.51.0"
+  }
+}
